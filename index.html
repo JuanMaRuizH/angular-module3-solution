@@ -12,19 +12,17 @@
 
   <div ng-controller="NarrowItDownController as narrowItCtrl">
       <div class="form-group">
-        <input type="text" placeholder="search term" class="form-control">
+        <input type="text" placeholder="search term" ng-model="narrowItCtrl.searchTerm" class="form-control">
       </div>
         <div class="form-group narrow-button">
-          <button class="btn btn-primary">Narrow It Down For Me!</button>
+          <button class="btn btn-primary" ng-click="narrowItCtrl.getMatches(narrowItCtrl.searchTerm);">Narrow It Down For Me!</button>
         </div>
-        <div class="lg-col-12">
-          <ul>
-            <li ng-repeat="item in narrowItCtrl.items">{{ item.name }}</li>
-          </ul>
-        </div>
+        <span>Search term: {{ narrowItCtrl.searchTerm }}</span>
         <!-- Bonus loader (see Bonus section of the assignment) -->
         <items-loader-indicator></items-loader-indicator>
-
+        <ul>
+          <li ng-repeat="item in narrowItCtrl.found"> {{ item }}</li>
+        </ul>
         <!-- found-items should be implemented as a component -->
         <found-items found-items="...." on-remove="...."></found-items>
       </div>
