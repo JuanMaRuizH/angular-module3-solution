@@ -21,8 +21,6 @@
       };
 
       narrowIt.removeItem = function(elemIndex) {
-        console.log("This inside controller is: ", this);
-        console.log("elemIndex inside controller: ", elemIndex);
         narrowIt.found.splice(elemIndex, 1);
       }
 

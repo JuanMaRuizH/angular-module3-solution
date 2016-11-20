@@ -14,11 +14,7 @@
           onRemove: '&'
         },
         controller: 'NarrowItDownController',
-        controllerAs: 'narrowItCtrl',
-        // bindToController: true,
-        link: function(scope, elem, attrs) {
-          console.log("scope: ", scope);
-        }
+        controllerAs: 'narrowItCtrl'
       };
       return ddo;
     }
